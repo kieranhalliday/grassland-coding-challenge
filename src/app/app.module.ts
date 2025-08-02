@@ -24,6 +24,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FruitTableComponent } from './fruit-challenge/components/fruit-table/fruit-table.component';
 import { FruitDialogComponent } from './fruit-challenge/components/fruit-dialog/fruit-dialog';
 import { TextMessageComponent } from './messaging-challenge/components/text-message/text-message';
+import { ImageMessageComponent } from './messaging-challenge/components/image-message/image-message';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import { TextMessageComponent } from './messaging-challenge/components/text-mess
     FruitTableComponent,
     FruitDialogComponent,
     TextMessageComponent,
+    ImageMessageComponent,
   ],
   providers: [
     {

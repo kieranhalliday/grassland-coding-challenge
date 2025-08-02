@@ -1,0 +1,16 @@
+@import '../base-message/base-message.scss';
+
+// Image-specific styles based on design requirements
+.image-bubble {
+    border-radius: 8px; // 8px border radius for image container
+    overflow: hidden;
+    width: 100%; // Fill the remaining available space
+    display: block; // Changed to block to fill width properly
+}
+
+.message-image {
+    width: 100%; // Width expands to fill the remaining available space
+    height: auto; // Height is not constrained - maintains aspect ratio
+    display: block;
+    border-radius: 8px; // 8px border radius for the image itself
+}
