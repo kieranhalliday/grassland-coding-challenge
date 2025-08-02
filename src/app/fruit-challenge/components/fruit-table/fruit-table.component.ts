@@ -113,4 +113,13 @@ export class FruitTableComponent implements OnInit {
     this.selectedSort = sortValue;
     this.sortSubject.next(sortValue);
   }
+
+  isLowCalorie(fruit: Fruit): boolean {
+    return fruit.nutritions.calories <= 50;
+  }
+
+  isHighSugar(fruit: Fruit): boolean {
+    return fruit.nutritions.calories <= 50 && fruit.nutritions.sugar >= 8;
+  }
+
 }

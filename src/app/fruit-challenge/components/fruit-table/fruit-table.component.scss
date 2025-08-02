@@ -26,3 +26,25 @@
   flex: 0.5;
   min-width: 300px;
 }
+
+.last-col {
+  text-align: right;
+}
+
+.mat-table {
+  .mat-mdc-row:nth-child(odd) {
+    background-color: #FFFFFF;
+  }
+  
+  .mat-mdc-row:nth-child(even) {
+    background-color: #FAFAFA;
+  }
+}
+
+.low-cals {
+  font-weight: bold;
+}
+
+.high-sugar {
+  background-color: #31BF5D !important;
+}
