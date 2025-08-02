@@ -1,32 +1,36 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {RouterModule} from '@angular/router';
-import {MatMenuModule} from '@angular/material/menu';
-import {AppRoutingModule} from './app-routing.module';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {MessagingComponent} from './messaging-challenge/components/messaging/messaging.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MessagingComponent } from './messaging-challenge/components/messaging/messaging.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+
+import { FruitTableComponent } from './fruit-challenge/components/fruit-table/fruit-table.component';
+import { FruitDialogComponent } from './fruit-challenge/components/fruit-dialog/fruit-dialog';
 
 @NgModule({
   imports: [
-    AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     MatTableModule,
     MatProgressSpinnerModule,
     MatIconModule,
@@ -37,11 +41,16 @@ import {MatSelectModule} from '@angular/material/select';
     MatSelectModule,
     RouterModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatDividerModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    MessagingComponent
+    MessagingComponent,
+    FruitTableComponent,
+    FruitDialogComponent
   ],
   providers: [
     {
@@ -51,4 +60,4 @@ import {MatSelectModule} from '@angular/material/select';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

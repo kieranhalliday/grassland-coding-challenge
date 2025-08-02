@@ -32,10 +32,14 @@
 }
 
 .mat-table {
+  .mat-mdc-row {
+    cursor: pointer;
+  }
+
   .mat-mdc-row:nth-child(odd) {
     background-color: #FFFFFF;
   }
-  
+
   .mat-mdc-row:nth-child(even) {
     background-color: #FAFAFA;
   }

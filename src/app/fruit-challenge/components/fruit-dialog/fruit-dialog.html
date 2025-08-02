@@ -1,0 +1,94 @@
+<div class="fruit-dialog-container">
+    <!-- Header with gradient background -->
+    <div class="dialog-header">
+        <h2 mat-dialog-title class="fruit-title">
+            <mat-icon class="fruit-icon">spa</mat-icon>
+            {{ data.name }}
+        </h2>
+        <button mat-icon-button class="close-button" (click)="onClose()" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <!-- Main content -->
+    <mat-dialog-content class="dialog-content">
+        <!-- Basic Information Card -->
+        <div class="info-card taxonomy-card">
+            <div class="card-header">
+                <mat-icon class="card-icon">science</mat-icon>
+                <h3>Taxonomy</h3>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">ID</span>
+                    <span class="value id-badge">#{{ data.id }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Genus</span>
+                    <span class="value">{{ data.genus }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Family</span>
+                    <span class="value">{{ data.family }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Order</span>
+                    <span class="value">{{ data.order }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutrition Information Card -->
+        <div class="info-card nutrition-card">
+            <div class="card-header">
+                <mat-icon class="card-icon">restaurant</mat-icon>
+                <h3>Nutritional Information</h3>
+            </div>
+            <div class="nutrition-grid">
+                <div class="nutrition-item calories">
+                    <div class="nutrition-icon">🔥</div>
+                    <div class="nutrition-details">
+                        <span class="nutrition-value">{{ data.nutritions.calories }}</span>
+                        <span class="nutrition-label">Calories</span>
+                    </div>
+                </div>
+                <div class="nutrition-item carbs">
+                    <div class="nutrition-icon">🌾</div>
+                    <div class="nutrition-details">
+                        <span class="nutrition-value">{{ data.nutritions.carbohydrates }}g</span>
+                        <span class="nutrition-label">Carbs</span>
+                    </div>
+                </div>
+                <div class="nutrition-item protein">
+                    <div class="nutrition-icon">💪</div>
+                    <div class="nutrition-details">
+                        <span class="nutrition-value">{{ data.nutritions.protein }}g</span>
+                        <span class="nutrition-label">Protein</span>
+                    </div>
+                </div>
+                <div class="nutrition-item fat">
+                    <div class="nutrition-icon">🥑</div>
+                    <div class="nutrition-details">
+                        <span class="nutrition-value">{{ data.nutritions.fat }}g</span>
+                        <span class="nutrition-label">Fat</span>
+                    </div>
+                </div>
+                <div class="nutrition-item sugar">
+                    <div class="nutrition-icon">🍯</div>
+                    <div class="nutrition-details">
+                        <span class="nutrition-value">{{ data.nutritions.sugar }}g</span>
+                        <span class="nutrition-label">Sugar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+
+    <!-- Action buttons -->
+    <mat-dialog-actions class="dialog-actions">
+        <button mat-raised-button color="primary" (click)="onClose()">
+            <mat-icon>check</mat-icon>
+            Got it!
+        </button>
+    </mat-dialog-actions>
+</div>

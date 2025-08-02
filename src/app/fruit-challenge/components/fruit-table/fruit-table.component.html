@@ -42,7 +42,8 @@
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
                         <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"
-                            [class.high-sugar]="isHighSugar(myRowData)">
+                            [class.high-sugar]="isHighSugar(myRowData)"
+                            (click)="openFruitDialog(myRowData)">
                         </tr>
                     </table>
                     <div class="loading-spinner-container" *ngIf="!!(viewModel.loadingFruit$|async)">

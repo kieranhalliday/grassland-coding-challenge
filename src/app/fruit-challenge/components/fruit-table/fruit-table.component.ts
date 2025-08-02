@@ -3,6 +3,8 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, distinctUntilChanged, debounceTime, shareReplay, catchError } from 'rxjs/operators';
 import { FruitTableViewModel } from 'src/app/fruit-challenge/components/fruit-table/fruit-table-view-model';
 import { Fruit } from 'src/app/fruit-challenge/models/fruit';
+import { FruitDialogComponent } from '../fruit-dialog/fruit-dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 interface SortOption {
   name: string;
@@ -96,7 +98,7 @@ export class FruitTableComponent implements OnInit {
     }
   }
 
-  constructor(public viewModel: FruitTableViewModel) {
+  constructor(public viewModel: FruitTableViewModel, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -122,4 +124,12 @@ export class FruitTableComponent implements OnInit {
     return fruit.nutritions.calories <= 50 && fruit.nutritions.sugar >= 8;
   }
 
+  openFruitDialog(fruit: Fruit) {
+    this.dialog.open(FruitDialogComponent, {
+      maxWidth: '95vw',  // Prevents overflow on small screens
+      maxHeight: '90vh', // Prevents vertical overflow
+      data: fruit,
+      panelClass: 'custom-dialog-container'
+    });
+  }
 }
