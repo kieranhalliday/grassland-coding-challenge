@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessagingService } from '../../services/messaging.service';
+import { TextMessage } from '../../models/text-message';
 
 @Component({
   selector: 'app-messaging',
@@ -8,7 +9,13 @@ import { MessagingService } from '../../services/messaging.service';
 })
 export class MessagingComponent {
   messages$ = this.messagingService.messages$;
-  
+
   constructor(public messagingService: MessagingService) {
+  }
+
+  isTextMessage(message: any): message is TextMessage {
+    return message instanceof TextMessage ||
+      (message && typeof message.content === 'string' &&
+        !message.content.includes('assets/'));
   }
 }
