@@ -1,6 +1,7 @@
-import { FruitTableComponent } from './fruit-challenge/components/fruit-table/fruit-table.component';
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { FruitTableComponent } from './fruit-challenge/components/fruit-table/fruit-table.component';
 import { MessagingComponent } from './messaging-challenge/components/messaging/messaging.component';
 
 const routes: Routes = [

@@ -10,6 +10,10 @@ interface SortOption {
   name: string;
   value: 'name-asc' | 'name-desc' | 'carbs-asc' | 'carbs-desc';
 }
+export const NUTRITION_THRESHOLDS = {
+  LOW_CALORIE: 50,
+  HIGH_SUGAR: 8
+} as const;
 
 @Component({
   selector: 'app-fruit-table',
@@ -117,11 +121,12 @@ export class FruitTableComponent implements OnInit {
   }
 
   isLowCalorie(fruit: Fruit): boolean {
-    return fruit.nutritions.calories <= 50;
+    return fruit?.nutritions?.calories <= NUTRITION_THRESHOLDS.LOW_CALORIE;
   }
 
   isHighSugar(fruit: Fruit): boolean {
-    return fruit.nutritions.calories <= 50 && fruit.nutritions.sugar >= 8;
+    return (fruit?.nutritions?.calories <= NUTRITION_THRESHOLDS.LOW_CALORIE) &&
+      (fruit?.nutritions?.sugar >= NUTRITION_THRESHOLDS.HIGH_SUGAR);
   }
 
   openFruitDialog(fruit: Fruit) {

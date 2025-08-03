@@ -1,0 +1,63 @@
+// base-message.component.scss - Shared styles for all message components
+:host {
+    --message-spacing: 8px;
+    --profile-picture-size: 16px;
+    --border-radius: 8px;
+    --font-size: 16px;
+    --anna-color: #4267b2;
+    --default-color: #8d8e91;
+    --message-bubble-padding: 4px;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: var(--message-spacing);
+    padding: var(--message-spacing);
+    gap: var(--message-spacing);
+
+    &.anna-message {
+        flex-direction: row-reverse;
+    }
+}
+
+.profile-picture {
+    width: var(--profile-picture-size);
+    height: var(--profile-picture-size);
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Default left alignment */
+}
+
+.anna-content {
+    align-items: flex-end;
+    /* Right align Anna's content */
+}
+
+.message-bubble {
+    background-color: var(--default-color);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+
+    &.anna-bubble {
+        background-color: var(--anna-color);
+    }
+
+    color: white;
+    padding: var(--message-bubble-padding);
+    word-wrap: break-word;
+    line-height: 1.4;
+    max-width: fit-content;
+    min-width: 0;
+}
+
+.anna-name {
+    text-align: right;
+}

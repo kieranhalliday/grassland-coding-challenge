@@ -4,8 +4,8 @@ import { TextMessage } from '../../models/text-message';
 
 @Component({
     selector: 'app-text-message',
-    templateUrl: './text-message.html',
-    styleUrls: ['./text-message.scss']
+    templateUrl: './text-message.component.html',
+    styleUrls: ['./text-message.component.scss']
 }) export class TextMessageComponent extends BaseMessageComponent {
     // Override the message property to be specifically TextMessage type
     @Input()
