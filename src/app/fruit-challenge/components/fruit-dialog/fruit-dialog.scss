@@ -1,0 +1,317 @@
+.fruit-dialog-container {
+    max-width: 600px;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dialog-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 24px 32px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dialog-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    pointer-events: none;
+}
+
+.fruit-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.fruit-icon {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.dialog-content {
+    padding: 32px;
+    background: #f8faff;
+    min-height: 300px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.taxonomy-card::before {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.nutrition-card::before {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0f4f8;
+}
+
+.card-icon {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f7fafc;
+    border-radius: 10px;
+    border-left: 4px solid #4facfe;
+}
+
+.label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.value {
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.id-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.nutrition-item {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nutrition-item:hover {
+    background: white;
+    border-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+.nutrition-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nutrition-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.nutrition-label {
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calories .nutrition-value {
+    color: #e53e3e;
+}
+
+.carbs .nutrition-value {
+    color: #d69e2e;
+}
+
+.protein .nutrition-value {
+    color: #38a169;
+}
+
+.fat .nutrition-value {
+    color: #805ad5;
+}
+
+.sugar .nutrition-value {
+    color: #d53f8c;
+}
+
+.dialog-actions {
+    padding: 24px 32px;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    justify-content: center;
+}
+
+.dialog-actions button {
+    font-size: 1rem;
+    padding: 12px 32px;
+    border-radius: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.dialog-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .fruit-dialog-container {
+        margin: 16px;
+        max-width: calc(100vw - 32px);
+    }
+
+    .dialog-header {
+        padding: 20px 24px 16px;
+    }
+
+    .fruit-title {
+        font-size: 1.5rem;
+    }
+
+    .dialog-content {
+        padding: 24px 20px;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

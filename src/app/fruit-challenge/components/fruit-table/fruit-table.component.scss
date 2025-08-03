@@ -9,3 +9,46 @@
   width: 100%;
   justify-content: center;
 }
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  flex: 0.5;
+  min-width: 300px;
+}
+
+.sort-input {
+  flex: 0.5;
+  min-width: 300px;
+}
+
+.last-col {
+  text-align: right;
+}
+
+.mat-table {
+  .mat-mdc-row {
+    cursor: pointer;
+  }
+
+  .mat-mdc-row:nth-child(odd) {
+    background-color: #FFFFFF;
+  }
+
+  .mat-mdc-row:nth-child(even) {
+    background-color: #FAFAFA;
+  }
+}
+
+.low-cals {
+  font-weight: bold;
+}
+
+.high-sugar {
+  background-color: #31BF5D !important;
+}

@@ -1,5 +1,16 @@
 <div class="container">
   <div class="fake-phone">
-    <!-- TODO - your code here -->
+    <div *ngFor="let message of messages$ | async">
+      <!-- Check if it's a TextMessage and display accordingly -->
+      <app-text-message *ngIf="isTextMessage(message)" [message]="message">
+      </app-text-message>
+
+      <!-- Check if it's a Image and display accordingly -->
+      <app-image-message *ngIf="isImageMessage(message)" [message]="message">
+      </app-image-message>
+
+      <!-- Fallback for debugging -->
+      <pre *ngIf="!isTextMessage(message) && !isImageMessage(message)">{{ message | json }}</pre>
+    </div>
   </div>
 </div>

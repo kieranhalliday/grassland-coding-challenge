@@ -1,41 +1,27 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {RouterModule} from '@angular/router';
-import {MatMenuModule} from '@angular/material/menu';
-import {AppRoutingModule} from './app-routing.module';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {MessagingComponent} from './messaging-challenge/components/messaging/messaging.component';
-import {MatCardModule} from '@angular/material/card';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MessagingModule } from './messaging-challenge/messaging.module';
+import { FruitModule } from './fruit-challenge/fruit.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    RouterModule,
-    MatMenuModule,
-    MatCardModule
-  ],
   declarations: [
-    AppComponent,
-    MessagingComponent
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MessagingModule,
+    FruitModule,
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [
     {
@@ -45,4 +31,4 @@ import {MatCardModule} from '@angular/material/card';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

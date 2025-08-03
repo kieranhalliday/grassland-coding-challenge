@@ -1,0 +1,11 @@
+<div class="message-container" [class.anna-message]="isFromAnna()">
+    <!-- Profile picture - always in same HTML position, CSS will handle the visual positioning -->
+    <img [src]="message.profilePictureUrl" [alt]="message.from + ' profile picture'" class="profile-picture">
+
+    <!-- Message content -->
+    <div class="message-content" [class.anna-content]="isFromAnna()">
+        <div class="message-bubble" [class.anna-bubble]="isFromAnna()">
+            {{ message.content }}
+        </div>
+    </div>
+</div>
